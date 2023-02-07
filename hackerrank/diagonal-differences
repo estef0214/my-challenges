@@ -12,9 +12,13 @@ require 'stringio'
 
 def diagonalDifference(arr)
     # Write your code here
-    p arr[i][i]
-    p arr[i][arr.length-i-1]
+    absdiff = 0
+    arr.each_with_index do |row, index|
+        absdiff += row[index]
+        absdiff -= row[row.length-1-index]
+    end
 
+    return absdiff.abs
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
