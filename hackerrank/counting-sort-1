@@ -12,7 +12,13 @@ require 'stringio'
 
 def countingSort(arr)
     # Write your code here
+    arr.each_with_index do |num,index|
+      if index <= 100
+          freq_arr = arr.map do |num|
 
+          end
+      end
+  end
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
