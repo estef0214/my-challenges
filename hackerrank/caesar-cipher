@@ -1,0 +1,33 @@
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+#
+# Complete the 'caesarCipher' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts following parameters:
+#  1. STRING s
+#  2. INTEGER k
+#
+
+def caesarCipher(s, k)
+    # Write your code here
+
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+n = gets.strip.to_i
+
+s = gets.chomp
+
+k = gets.strip.to_i
+
+result = caesarCipher s, k
+
+fptr.write result
+fptr.write "\n"
+
+fptr.close()
