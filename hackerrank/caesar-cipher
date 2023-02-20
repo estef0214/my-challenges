@@ -14,6 +14,13 @@ require 'stringio'
 
 def caesarCipher(s, k)
     # Write your code here
+     message = s.split('')
+    position_array = message.map {|letter| letter.bytes }
+    p position_array
+    position_array.each {|element| element[0] += k}
+    p position_array
+    position_array.each {|element| element.pack('C*').force_encoding('UTF-8')}
+    p position_array
 
 end
 
