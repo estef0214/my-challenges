@@ -14,7 +14,13 @@ require 'stringio'
 
 def towerBreakers(n, m)
     # Write your code here
-
+  if m==1
+      p 2
+  elsif n%2==0
+      p 2
+  else
+      p 1
+  end
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
