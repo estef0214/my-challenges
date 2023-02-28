@@ -14,26 +14,43 @@ require 'stringio'
 
 def caesarCipher(s, k)
     # Write your code here
-     position_array = s.bytes
-     new_position = position_array.map {|num| num += k}
-     p new_position
-     p new_position.pack('c*')
-     p new_position
-     # return position_array
+    position_array = s.bytes
+    p position_array
+    new_position = position_array.map do |num|
+        # p num
+        if (num >= 65 && num <= 90 - k) || (num >= 97 && num<= 122-k)
+            num += k
+          # p "im here"
+        elsif (num <= 90 && num >= 65) && num > 90 - k
+            num = 64 + (k - (90-num))%26
+            # p "im here 90 - k"
+        elsif (num <= 122 && num >= 97) && num > 122-k
+            num = 96 + (k - (122-num))%26
+            # p "im here 122-k"
+        else
+            num
+        end
+        # p num
+    end
+    p new_position
 
+    p new_position.pack('c*')
 end
 
-fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+caesarCipher("www.abc.xy", 87)
+# caesarCipher("_", 4)
 
-n = gets.strip.to_i
+# fptr = File.open(ENV['OUTPUT_PATH'], 'w')
 
-s = gets.chomp
+# n = gets.strip.to_i
 
-k = gets.strip.to_i
+# s = gets.chomp
 
-result = caesarCipher s, k
+# k = gets.strip.to_i
 
-fptr.write result
-fptr.write "\n"
+# result = caesarCipher s, k
 
-fptr.close()
+# fptr.write result
+# fptr.write "\n"
+
+# fptr.close()
