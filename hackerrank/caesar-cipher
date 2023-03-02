@@ -37,7 +37,10 @@ def caesarCipher(s, k)
     p new_position.pack('c*')
 end
 
-caesarCipher("www.abc.xy", 87)
+# caesarCipher("www.abc.xy", 87)
+# 159357lcfd
+caesarCipher("159357lcfd", 98)
+# should get 159357fwzx
 # caesarCipher("_", 4)
 
 # fptr = File.open(ENV['OUTPUT_PATH'], 'w')
