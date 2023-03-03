@@ -39,7 +39,8 @@ end
 
 # caesarCipher("www.abc.xy", 87)
 # 159357lcfd
-caesarCipher("159357lcfd", 98)
+# caesarCipher("159357lcfd", 98)
+p (2 - 65) & 26
 # should get 159357fwzx
 # caesarCipher("_", 4)
 
