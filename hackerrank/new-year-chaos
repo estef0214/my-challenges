@@ -1,0 +1,25 @@
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+#
+# Complete the 'minimumBribes' function below.
+#
+# The function accepts INTEGER_ARRAY q as parameter.
+#
+
+def minimumBribes(q)
+    # Write your code here
+
+end
+
+t = gets.strip.to_i
+
+t.times do |t_itr|
+    n = gets.strip.to_i
+
+    q = gets.rstrip.split.map(&:to_i)
+
+    minimumBribes q
+end
