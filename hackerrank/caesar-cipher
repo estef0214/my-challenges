@@ -17,21 +17,38 @@ def caesarCipher(s, k)
     position_array = s.bytes
     p position_array
     new_position = position_array.map do |num|
-        # p num
-        if (num >= 65 && num <= 90 - k) || (num >= 97 && num<= 122-k)
-            num += k
-          # p "im here"
-        elsif (num <= 90 && num >= 65) && num > 90 - k
-            num = 64 + (k - (90-num))%26
-            # p "im here 90 - k"
-        elsif (num <= 122 && num >= 97) && num > 122-k
-            num = 96 + (k - (122-num))%26
-            # p "im here 122-k"
-        else
-            num
-        end
-        # p num
+      if (num <= 90 && num >= 65)
+          if num > 26
+              num = 65 + (k % 26)
+          else
+              num += (k % 26)
+          end
+      elsif (num <= 122 && num >= 97)
+          if num > 26
+              num = 97 + (k % 26)
+          else
+              num += (k % 26)
+          end
+      else
+          num
+      end
     end
+    # new_position = position_array.map do |num|
+    #     # p num
+    #     if (num >= 65 && num <= 90 - k) || (num >= 97 && num<= 122-k)
+    #         num += k
+    #       # p "im here"
+    #     elsif (num <= 90 && num >= 65) && num > 90 - k
+    #         num = 64 + (k - (90-num))%26
+    #         # p "im here 90 - k"
+    #     elsif (num <= 122 && num >= 97) && num > 122-k
+    #         num = 96 + (k - (122-num))%26
+    #         # p "im here 122-k"
+    #     else
+    #         num
+    #     end
+    #     # p num
+    # end
     p new_position
 
     p new_position.pack('c*')
@@ -40,9 +57,8 @@ end
 # caesarCipher("www.abc.xy", 87)
 # 159357lcfd
 # caesarCipher("159357lcfd", 98)
-p (2 - 65) & 26
 # should get 159357fwzx
-# caesarCipher("_", 4)
+caesarCipher("middle-Outz", 2)
 
 # fptr = File.open(ENV['OUTPUT_PATH'], 'w')
 
